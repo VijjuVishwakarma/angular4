@@ -1,0 +1,19 @@
+<div>
+  <ul *ngFor='let a of actors'>
+    <li>{{a}} <button (click)='getDetails(a)'>details</button></li>
+  
+  </ul>
+
+  <div>
+    <p>actor details</p>
+    <h3>{{actors}}</h3>
+
+    <div>
+      <h1>Name::<span>{{actorDetail.name}}</span></h1>
+      <h1>age::{{actorDetail.age}}</h1>
+      <h1>category::{{actorDetail.category}}</h1>
+      <h1>address::{{actorDetail.address}}</h1>
+    </div>
+    
+  </div>
+</div>
