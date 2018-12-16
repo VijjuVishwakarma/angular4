@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { ActorComponent } from './actor/actor.component';
 import { ActressComponent } from './actress/actress.component';
 import { HomeComponent } from './home/home.component';
-
+import { ActorService } from './service/actor.service';
 const routes: Routes = [
  
   {
@@ -26,14 +26,16 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     ActorComponent,
-	ActressComponent,
-	HomeComponent
+	  ActressComponent,
+	  HomeComponent
   ],
   imports: [
     BrowserModule,
 	RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    ActorService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

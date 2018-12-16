@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {ActorService} from '../service/actor.service';
 @Component({
   selector: 'app-actor',
   templateUrl: './actor.component.html',
@@ -7,26 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActorComponent implements OnInit {
 
-  actorDetails=[{"id":1,"name":'Pawan Kalyan',"age":45,"category":'cinema actor','address':'hyderabad'},
-  {"id":2,"name":'Mahesh Babu',"age":45,"category":'cinema actor','address':'hyderabad'},
-  {"id":3,"name":'Prabhas',"age":40,"category":'cinema actor','address':'hyderabad'},
-  {"id":4,"name":"Jr NTR","age":35,"category":'cinema actor','address':'hyderabad'}]
-
+  service:ActorService;
+  
   actorDetail={};
   actors=['Pawan Kalyan','Mahesh Babu','Prabhas','Jr NTR'];
-  constructor() { }
+  constructor(service:ActorService) {
+    this.service = service;
+    
+   }
 
   ngOnInit() {
   }
-getDetails(actor:String){
-    for(let  i of this.actorDetails){
-      
-      if(i.name===actor){
-        console.log('Success');
-        this.actorDetail=i;
-      }
-    }
-    console.log(this.actorDetail);
-    console.log("Button clicked for"+actor);
-}
+  getDetails(actor:String){
+
+    this.actorDetail = this.service.getActor(actor);
+
+  }
+    
 }
