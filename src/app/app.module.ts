@@ -6,6 +6,7 @@ import { ActorComponent } from './actor/actor.component';
 import { ActressComponent } from './actress/actress.component';
 import { HomeComponent } from './home/home.component';
 import { ActorService } from './service/actor.service';
+import { ActressService } from './service/actress.service';
 const routes: Routes = [
  
   {
@@ -34,7 +35,8 @@ const routes: Routes = [
 	RouterModule.forRoot(routes)
   ],
   providers: [
-    ActorService
+    ActorService,
+    ActressService
   ],
   bootstrap: [AppComponent]
 })

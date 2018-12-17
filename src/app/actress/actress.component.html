@@ -1,1 +1,20 @@
-<h1> it is Actress Component</h1>
+<div>
+    <ul *ngFor='let a of actress'>
+      <li>{{a}} <button (click)='getDetails(a)'>details</button></li>
+    
+    </ul>
+  
+    <div>
+      <p>actress details</p>
+      <h3>{{actress}}</h3>
+  
+      <div>
+        <h1>Name::<span>{{actressDetail.name}}</span></h1>
+        <h1>age::{{actressDetail.age}}</h1>
+        <h1>category::{{actressDetail.category}}</h1>
+        <h1>address::{{actressDetail.address}}</h1>
+      </div>
+      
+    </div>
+  </div>
+  
