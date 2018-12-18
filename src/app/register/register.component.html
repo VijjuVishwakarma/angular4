@@ -1,0 +1,23 @@
+<div>
+
+
+<div style="width: 180px; margin: 100px 0px 0px 200px">
+  <div>Registration Form</div>
+
+  <form>
+    <input type="number" placeholder="Enter Register Number" name='rno' [(ngModel)]='registrationNo'/>
+    <input type="text" placeholder="Enter First Name"  name='fname' [(ngModel)]='firstName'/>
+    <input type="text" placeholder="Enter Last Name"  name='lname' [(ngModel)]='lastname'/>
+    <input type="radio" name="artist" value="actor" [(ngModel)]='type'/>Actor <input type="radio" name="artist" value="actress" [(ngModel)]='type'/>Actress 
+    <input type="text" placeholder="Enter Contact Number"  name='contactno' [(ngModel)]='contactNo'/>
+    <input type="text" placeholder="Enter Address"  name='address' [(ngModel)]='address'/>
+    Movies : <input type="text" placeholder="Enter Movie Name"/> 
+    Category : <select [(ngModel)]='category' name='category'>
+          <option  *ngFor='let cat of categories'>{{cat}}</option>
+         
+    </select>
+    <input type="button" value="Register" (click)='handleRegister()'/>
+  </form>
+</div>
+
+</div>

@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  public actorpath:String = './actor';
-  public actresspath:String = './actress';
   constructor() { }
 
   ngOnInit() {

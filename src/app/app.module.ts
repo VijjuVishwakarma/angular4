@@ -7,6 +7,8 @@ import { ActressComponent } from './actress/actress.component';
 import { HomeComponent } from './home/home.component';
 import { ActorService } from './service/actor.service';
 import { ActressService } from './service/actress.service';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule } from '@angular/forms';
 const routes: Routes = [
  
   {
@@ -22,16 +24,22 @@ const routes: Routes = [
     path: 'actress',
     component: ActressComponent
   },
+  {
+    path: 'register',
+    component: RegisterComponent
+  }
  ]
 @NgModule({
   declarations: [
     AppComponent,
     ActorComponent,
 	  ActressComponent,
-	  HomeComponent
+	  HomeComponent,
+	  RegisterComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
 	RouterModule.forRoot(routes)
   ],
   providers: [
