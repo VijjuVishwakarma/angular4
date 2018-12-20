@@ -10,7 +10,7 @@ export class ActorComponent implements OnInit {
   service:ActorService;
   
   actorDetail={};
-  actors=['Pawan Kalyan','Mahesh Babu','Prabhas','Jr NTR'];
+  actors=['Pawan Kalyan','Mahesh Babu','Prabhas','Jr NTR','Ram','Ram Charan','Sunil'];
   constructor(service:ActorService) {
     this.service = service;
     
