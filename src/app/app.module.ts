@@ -8,7 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { ActorService } from './service/actor.service';
 import { ActressService } from './service/actress.service';
 import { RegisterComponent } from './register/register.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { ModelDrivenFormComponent } from './model-driven-form/model-driven-form.component';
 const routes: Routes = [
  
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path:'model_register',
+    component:ModelDrivenFormComponent
   }
  ]
 @NgModule({
@@ -35,11 +40,13 @@ const routes: Routes = [
     ActorComponent,
 	  ActressComponent,
 	  HomeComponent,
-	  RegisterComponent
+	  RegisterComponent,
+	  ModelDrivenFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
 	RouterModule.forRoot(routes)
   ],
   providers: [

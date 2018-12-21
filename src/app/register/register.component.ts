@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Actor } from '../model/actor.model';
 
 @Component({
   selector: 'app-register',
@@ -7,36 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  registrationNo : number = 0;
+  actor:Actor;
 
-  firstName : string;
-
-  lastname : string;
-
-  type : string;
-
-  contactNo : number;
-
-  address  : string;
-
-  movies:String[];
-
-  category:String;
-
-  categories:String[] = ['Hero','Villan','Commedian','Character Artist'];
-
-  constructor() { }
+  constructor() { 
+    this.actor = new Actor();
+  }
 
   ngOnInit() {
   }
 
   handleRegister(){
-    console.log("Registration No :: "+this.registrationNo);
-    console.log("First Name :: "+this.firstName);
-    console.log("Last Name :: "+this.lastname);
-    console.log("Type :: "+this.type);
-    console.log("Contact No :: "+this.contactNo);
-    console.log("address No :: "+this.address);
-    console.log("Category No :: "+this.category);
+    console.log("Registration No :: "+this.actor.registrationNo);
+    console.log("First Name :: "+this.actor.firstName);
+    console.log("Last Name :: "+this.actor.lastname);
+    console.log("Type :: "+this.actor.type);
+    console.log("Contact No :: "+this.actor.contactNo);
+    console.log("address No :: "+this.actor.address);
+    console.log("Category No :: "+this.actor.category);
   }
 }

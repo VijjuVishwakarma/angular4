@@ -1,19 +1,35 @@
 <div>
 
+<!--
+ng-pristine
+ng-dirty
+ng-touched
+ng-untouched
+ng-reflect
+ng-valid
+ng-invalid
+
+-->
 
 <div style="width: 180px; margin: 100px 0px 0px 200px">
   <div>Registration Form</div>
 
-  <form>
-    <input type="number" placeholder="Enter Register Number" name='rno' [(ngModel)]='registrationNo'/>
-    <input type="text" placeholder="Enter First Name"  name='fname' [(ngModel)]='firstName'/>
-    <input type="text" placeholder="Enter Last Name"  name='lname' [(ngModel)]='lastname'/>
-    <input type="radio" name="artist" value="actor" [(ngModel)]='type'/>Actor <input type="radio" name="artist" value="actress" [(ngModel)]='type'/>Actress 
-    <input type="text" placeholder="Enter Contact Number"  name='contactno' [(ngModel)]='contactNo'/>
-    <input type="text" placeholder="Enter Address"  name='address' [(ngModel)]='address'/>
-    Movies : <input type="text" placeholder="Enter Movie Name"/> 
-    Category : <select [(ngModel)]='category' name='category'>
-          <option  *ngFor='let cat of categories'>{{cat}}</option>
+  <form novalidate #f="ngForm">
+    <input type="text" placeholder="Enter Register Number" class="form-control" name='rno' #rno="ngModel" [(ngModel)]='actor.registrationNo' required minlength="4" maxlength="10"/>
+    <span *ngIf="rno.errors &&  (rno.dirty || rno.touched)"> 
+      <span *ngIf='rno.errors.required'>Please enter Registration Number</span>
+      <span *ngIf='rno.errors.minlength'>Please enter more than 4 charactors</span>
+      <span *ngIf='rno.errors.maxlength'>Please enter less than 10 charactors</span>
+    </span>
+    <input type="text" placeholder="Enter First Name"  name='fname' [(ngModel)]='actor.firstName' required/>
+    <input type="text" placeholder="Enter Last Name"  name='lname' [(ngModel)]='actor.lastname' required/>
+    <input type='email' placeholder="Enter Email" name="email" required/>
+    <input type="radio" name="artist" value="actor" [(ngModel)]='actor.type'/>Actor <input type="radio" name="artist" value="actress" [(ngModel)]='actor.type'/>Actress 
+    <input type="text" placeholder="Enter Contact Number"  name='contactno' [(ngModel)]='actor.contactNo' required/>
+    <input type="text" placeholder="Enter Address"  name='address' [(ngModel)]='actor.address' required/>
+    Movies : <input type="text" placeholder="Enter Movie Name" required/> 
+    Category : <select [(ngModel)]='actor.category' name='category'>
+          <option  *ngFor='let cat of actor.categories'>{{cat}}</option>
          
     </select>
     <input type="button" value="Register" (click)='handleRegister()'/>

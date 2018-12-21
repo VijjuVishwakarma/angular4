@@ -1,0 +1,38 @@
+<div>
+
+  <!--
+  ng-pristine
+  ng-dirty
+  ng-touched
+  ng-untouched
+  ng-reflect
+  ng-valid
+  ng-invalid
+  
+  () - event binding
+  {{}} - interpolation
+  [] - property binding
+  [()] - two way binding
+  -->
+  
+  <div style="width: 180px; margin: 100px 0px 0px 200px">
+    <div>Registration Form</div>
+  
+    <form [formGroup]='registrationFrom'>
+      <input type="text" placeholder="Enter Register Number" class="form-control" formControlName='rno' name='rno'  required minlength="4" maxlength="10"/>
+      <input type="text" placeholder="Enter First Name"  name='fname' formControlName='fname' required/>
+      <input type="text" placeholder="Enter Last Name"  name='lname' formControlName='lname'   required/>
+      <input type='email' placeholder="Enter Email" name="email" formControlName='email'  required/>
+      <input type="radio" name="artist" value="actor" formControlName='artist' />Actor <input type="radio" name="artist" formControlName='artist'  value="actress"/>Actress 
+      <input type="text" placeholder="Enter Contact Number"  name='contactno' formControlName='contactno' required/>
+      <input type="text" placeholder="Enter Address"  name='address' formControlName='address'   required/>
+      Movies : <input type="text" placeholder="Enter Movie Name" formControlName='movieName'  required/> 
+      Category : <select  name='category'>
+            <option  *ngFor='let cat of actor.categories'>{{cat}}</option>
+           
+      </select>
+      <input type="button" value="Register" (click)='handleRegister()'/>
+    </form>
+  </div>
+  
+  </div>
