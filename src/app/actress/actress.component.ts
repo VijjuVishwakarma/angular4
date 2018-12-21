@@ -11,7 +11,7 @@ export class ActressComponent implements OnInit {
  service:ActressService;
 
   actressDetail={};
-  actress=['Kajal','Tamanna','Anuska','Samantha'];
+  actress=['Kajal','Tamanna','Anuskaa','Samantha'];
   constructor(service:ActressService) {
 	  this.service=service;
    }
