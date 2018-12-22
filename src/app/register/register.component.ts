@@ -27,3 +27,4 @@ export class RegisterComponent implements OnInit {
     console.log("Category No :: "+this.actor.category);
   }
 }
+aa
