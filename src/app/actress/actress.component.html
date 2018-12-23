@@ -1,18 +1,18 @@
 <div>
     <ul *ngFor='let a of actress'>
-      <li>{{a}} <button (click)='getDetails(a)'>details</button></li>
+      <li>{{a}} <button (click)='getDetails(a)' style="color:rgb(11, 21, 168)">details</button></li>
     
     </ul>
   
     <div>
-      <p>actress details</p>
-      <h3>{{actress}}</h3>
+      <h2 style="color:rgb(27, 116, 231)">Actress Details</h2>
   
       <div>
-        <h1>Name::<span>{{actressDetail.name}}</span></h1>
-        <h1>age::{{actressDetail.age}}</h1>
-        <h1>category::{{actressDetail.category}}</h1>
-        <h1>address::{{actressDetail.address}}</h1>
+        <h3>Name::{{actressDetail.name}}</h3>
+        <h3>age::{{actressDetail.age}}</h3>
+        <h3>category::{{actressDetail.category}}</h3>
+        <h3>address::{{actressDetail.address}}</h3>
+        <h3>movies::{{actressDetail.movies}}</h3>
       </div>
       
     </div>
