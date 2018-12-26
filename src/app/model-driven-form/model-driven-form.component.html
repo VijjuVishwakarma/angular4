@@ -19,7 +19,10 @@
     <div>Registration Form</div>
   
     <form [formGroup]='registrationFrom'>
-      <input type="text" placeholder="Enter Register Number" class="form-control" formControlName='rno' name='rno'  required minlength="4" maxlength="10"/>
+      <input type="text" placeholder="Enter Register Number" class="form-control" formControlName='rno' name='rno' required/>
+      <span *ngIf='rno.errors'>
+        <span *ngIf='rno.errors.required'>Registration Number Required</span>
+      </span>
       <input type="text" placeholder="Enter First Name"  name='fname' formControlName='fname' required/>
       <input type="text" placeholder="Enter Last Name"  name='lname' formControlName='lname'   required/>
       <input type='email' placeholder="Enter Email" name="email" formControlName='email'  required/>
@@ -28,7 +31,7 @@
       <input type="text" placeholder="Enter Address"  name='address' formControlName='address'   required/>
       Movies : <input type="text" placeholder="Enter Movie Name" formControlName='movieName'  required/> 
       Category : <select  name='category'>
-            <option  *ngFor='let cat of actor.categories'>{{cat}}</option>
+            <option  *ngFor='let cat of categories'>{{cat}}</option>
            
       </select>
       <input type="button" value="Register" (click)='handleRegister()'/>
@@ -37,4 +40,4 @@
   
   </div>
 
-  aa
+  

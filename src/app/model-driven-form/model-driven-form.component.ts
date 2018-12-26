@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Actor } from '../model/actor.model';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-model-driven-form',
@@ -13,14 +13,14 @@ export class ModelDrivenFormComponent implements OnInit {
 
   constructor(private fb:FormBuilder) { 
     this.registrationFrom = fb.group({
-      rno:'',
-      fname:'',
-      lname:'',
-      email:'',
-      artist:'',
-      contactno:'',
-      address:'',
-      movieName:''
+      rno: new FormControl('',Validators.required),
+      fname:new FormControl('',Validators.required),
+      lname:new FormControl('',Validators.required),
+      email:new FormControl('',Validators.required),
+      artist:new FormControl('',Validators.required),
+      contactno:new FormControl('',Validators.required),
+      address:new FormControl('',Validators.required),
+      movieName:new FormControl('',Validators.required)
     });
   }
 
@@ -40,4 +40,3 @@ export class ModelDrivenFormComponent implements OnInit {
   }
 
 }
-aa
