@@ -13,7 +13,7 @@ export class ModelDrivenFormComponent implements OnInit {
 
   constructor(private fb:FormBuilder) { 
     this.registrationFrom = fb.group({
-      rno: new FormControl('',Validators.required),
+      rno: new FormControl('',[Validators.required,Validators.minLength(4),Validators.maxLength(10)]),
       fname:new FormControl('',Validators.required),
       lname:new FormControl('',Validators.required),
       email:new FormControl('',Validators.required),

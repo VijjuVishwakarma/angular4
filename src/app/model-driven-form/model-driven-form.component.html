@@ -19,10 +19,14 @@
     <div>Registration Form</div>
   
     <form [formGroup]='registrationFrom'>
-      <input type="text" placeholder="Enter Register Number" class="form-control" formControlName='rno' name='rno' required/>
-      <span *ngIf='rno.errors'>
-        <span *ngIf='rno.errors.required'>Registration Number Required</span>
-      </span>
+      <input type="text" placeholder="Enter Register Number" class="form-control" formControlName='rno' name='rno' required minlength="4" maxlength="10"/>
+     
+        <span [hidden]='registrationFrom.controls.rno.valid || registrationFrom.controls.rno.pristine'>Please enter Registration Number</span>
+  
+    
+      <!--
+        <span [hidden]='registrationFrom.controls.rno.valid || registrationFrom.controls.rno.pristine'>Registration Number Required</span>
+      -->
       <input type="text" placeholder="Enter First Name"  name='fname' formControlName='fname' required/>
       <input type="text" placeholder="Enter Last Name"  name='lname' formControlName='lname'   required/>
       <input type='email' placeholder="Enter Email" name="email" formControlName='email'  required/>
@@ -37,7 +41,7 @@
       <input type="button" value="Register" (click)='handleRegister()'/>
     </form>
   </div>
-  
   </div>
 
+  
   
