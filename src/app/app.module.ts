@@ -10,6 +10,7 @@ import { ActressService } from './service/actress.service';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ModelDrivenFormComponent } from './model-driven-form/model-driven-form.component';
+import { HttpModule } from '@angular/http';
 const routes: Routes = [
  
   {
@@ -47,6 +48,7 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpModule,
 	RouterModule.forRoot(routes)
   ],
   providers: [

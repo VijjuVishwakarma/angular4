@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActorService} from '../service/actor.service';
+import { Observable } from 'rxjs/Observable';
+import { Response } from '@angular/http';
 @Component({
   selector: 'app-actor',
   templateUrl: './actor.component.html',
@@ -8,8 +10,8 @@ import {ActorService} from '../service/actor.service';
 export class ActorComponent implements OnInit {
 
   service:ActorService;
-  
-  actorDetail={};
+  actorsData:any;
+  actorDetail:Observable<Response>;
   actors=['Pawan Kalyan','Mahesh Babu','Prabhas','Jr NTR','Ram','Ram Charan','Sunil'];
   constructor(service:ActorService) {
     this.service = service;
@@ -21,7 +23,9 @@ export class ActorComponent implements OnInit {
   getDetails(actor:String){
 
     this.actorDetail = this.service.getActor(actor);
+    this.actorDetail.subscribe((res) => this.actorsData =  res)
 
   }
     
 }
+
