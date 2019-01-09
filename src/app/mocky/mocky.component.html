@@ -1,0 +1,10 @@
+<div>
+  <div *ngFor='let user of mockiyResponse'> 
+    <button (click)='getDetails(user.id)'>{{user.name}}</button>
+  </div>
+  <div *ngIf='userDetail!=null'>
+    name :: {{userDetail.name}}
+    age :: {{userDetail.age}}
+    
+  </div>
+</div>

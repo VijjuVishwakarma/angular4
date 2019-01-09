@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { Actor } from '../model/actor.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class ActorService {
@@ -13,15 +15,15 @@ export class ActorService {
   {"id":7,"name":"Sunil","age":40,"category":'commedian','address':'hyderabad','movies':100}
 ]
 */
-actorDetails : Observable<Response>;
-  constructor(http:Http) {
-      this.actorDetails = http.get("https://tollywoodservices.herokuapp.com/rest/actors");
-
+http:HttpClient;
+actorDetails : Observable<Actor>;
+  constructor(http:HttpClient) {
+      this.http = http;
    }
   
-  getActor(actor:String){
+  getActor(actor:String):Observable<Actor[]>{
 
-    return this.actorDetails;
+    return <Observable<Actor[]>>this.http.get('https://tollywoodservices.herokuapp.com/rest/actors');
 	  /*for(let  i of this.actorDetails){
       
       if(i.name===actor){

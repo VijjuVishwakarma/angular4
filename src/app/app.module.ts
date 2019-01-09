@@ -11,6 +11,8 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ModelDrivenFormComponent } from './model-driven-form/model-driven-form.component';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { MockyComponent } from './mocky/mocky.component';
 const routes: Routes = [
  
   {
@@ -33,6 +35,10 @@ const routes: Routes = [
   {
     path:'model_register',
     component:ModelDrivenFormComponent
+  },
+  {
+    path:'mocky',
+    component:MockyComponent
   }
  ]
 @NgModule({
@@ -42,13 +48,15 @@ const routes: Routes = [
 	  ActressComponent,
 	  HomeComponent,
 	  RegisterComponent,
-	  ModelDrivenFormComponent
+	  ModelDrivenFormComponent,
+	  MockyComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    HttpClientModule,
 	RouterModule.forRoot(routes)
   ],
   providers: [

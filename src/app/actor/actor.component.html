@@ -8,14 +8,12 @@
     <h2 style="color:rgb(27, 116, 231)">Actor Details</h2>
     
 
-   <!-- <div>
-     <h3>Name::{{actorDetail.name}}</h3>
-      <h3>age::{{actorDetail.age}}</h3>
-      <h3>category::{{actorDetail.category}}</h3>
-      <h3>address::{{actorDetail.address}}</h3>
-      <h3>movies::{{actorDetail.movies}}</h3>
+    <div *ngIf='actorData!=null'>
+     <h3>Name::{{actorData.firstName}}</h3>
+      <h3>address::{{actorData.address}}</h3>
+      <h3>movies::{{actorData.movies}}</h3>
     </div>
-  -->
+
   {{actorsData}}
   </div>
 </div>

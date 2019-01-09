@@ -29,7 +29,7 @@ export class ModelDrivenFormComponent implements OnInit {
 
   handleRegister(){
 
-    console.log(this.registrationFrom.get('rno'));
+    console.log(this.registrationFrom.get('rno').value);
     /*console.log("First Name :: "+this.actor.firstName);
     console.log("Last Name :: "+this.actor.lastname);
     console.log("Type :: "+this.actor.type);
