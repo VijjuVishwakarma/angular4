@@ -13,6 +13,7 @@ import { ModelDrivenFormComponent } from './model-driven-form/model-driven-form.
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { MockyComponent } from './mocky/mocky.component';
+import { CustomfilterPipe } from './customfilter.pipe';
 const routes: Routes = [
  
   {
@@ -49,7 +50,8 @@ const routes: Routes = [
 	  HomeComponent,
 	  RegisterComponent,
 	  ModelDrivenFormComponent,
-	  MockyComponent
+	  MockyComponent,
+	  CustomfilterPipe
   ],
   imports: [
     BrowserModule,
