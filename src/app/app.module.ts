@@ -14,6 +14,9 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { MockyComponent } from './mocky/mocky.component';
 import { CustomfilterPipe } from './customfilter.pipe';
+import { AccountComponent } from './account/account.component';
+import { WithdrawComponent } from './withdraw/withdraw.component';
+import { DepositComponent } from './deposit/deposit.component';
 const routes: Routes = [
  
   {
@@ -40,6 +43,10 @@ const routes: Routes = [
   {
     path:'mocky',
     component:MockyComponent
+  },
+  {
+    path:'account',
+    component:AccountComponent
   }
  ]
 @NgModule({
@@ -51,7 +58,10 @@ const routes: Routes = [
 	  RegisterComponent,
 	  ModelDrivenFormComponent,
 	  MockyComponent,
-	  CustomfilterPipe
+	  CustomfilterPipe,
+	  AccountComponent,
+	  WithdrawComponent,
+	  DepositComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+<p>
+  Current Amount :: {{currentAmount}}
+
+  <input type='text' [(ngModel)]='amount'/>
+
+  <app-withdraw [currentBalance]='currentAmount' [withdrawAmt]='amount'  (callback)='handleResponse($event)'></app-withdraw>
+  
+  <app-deposit></app-deposit>
+</p>
